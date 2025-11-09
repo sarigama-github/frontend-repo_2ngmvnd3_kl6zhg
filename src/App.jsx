@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import HeaderBar from './components/HeaderBar';
 import Sidebar from './components/Sidebar';
 import StatCards from './components/StatCards';
@@ -132,26 +132,24 @@ const DashboardPage = () => (
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-[#F4F6FA] text-[#1B1D22]">
-        <HeaderBar />
-        <div className="mx-auto max-w-[1400px] px-6 py-6 flex gap-6">
-          <Sidebar />
-          <main className="flex-1 space-y-6">
-            <Routes>
-              <Route path="/" element={<DashboardPage />} />
-              <Route path="/locations" element={<LocationsPage />} />
-              <Route path="/devices" element={<DevicesPage />} />
-              <Route path="/alerts" element={<AlertsPage />} />
-              <Route path="/reports" element={<ReportsPage />} />
-              <Route path="/support" element={<SupportPage />} />
-              <Route path="/settings" element={<SettingsPage />} />
-              <Route path="/users" element={<UsersPage />} />
-            </Routes>
-          </main>
-        </div>
+    <div className="min-h-screen bg-[#F4F6FA] text-[#1B1D22]">
+      <HeaderBar />
+      <div className="mx-auto max-w-[1400px] px-6 py-6 flex gap-6">
+        <Sidebar />
+        <main className="flex-1 space-y-6">
+          <Routes>
+            <Route path="/" element={<DashboardPage />} />
+            <Route path="/locations" element={<LocationsPage />} />
+            <Route path="/devices" element={<DevicesPage />} />
+            <Route path="/alerts" element={<AlertsPage />} />
+            <Route path="/reports" element={<ReportsPage />} />
+            <Route path="/support" element={<SupportPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/users" element={<UsersPage />} />
+          </Routes>
+        </main>
       </div>
-    </BrowserRouter>
+    </div>
   );
 };
 
